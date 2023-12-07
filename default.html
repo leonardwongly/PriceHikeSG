@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PriceHikeSG</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <style>
+    body {
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+      background-color: #f8f9fa;
+    }
+
+    .countdown {
+      font-size: 18px;
+      margin: 15px;
+    }
+  </style>
+</head>
+<body class="fw-lighter">
+
+<div class="container">
+    <h2 class="position-absolute top-0 start-50 translate-middle-x text-center fw-bold">PriceHikeSG</h2>
+    <br/>
+  <div class="row">
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Public Transport Revision</h5>
+                <p class="card-text">23rd December 2023</p>
+                <div id="countdown1" class="alert alert-light countdown"></div>
+                <a href="https://www.ptc.gov.sg/newsroom/news-releases/newsroom-view/fre2023" target="_blank" noreferrer
+                    class="btn btn-primary btn-sm btn-link">Source&nbsp;<i class="bi bi-box-arrow-up-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">9% GST</h5>
+                <p class="card-text">1st January 2024</p>
+                <div id="countdown2" class="alert alert-light countdown"></div>
+                <a href="https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-rate-change/gst-rate-change-for-consumers1" class="btn btn-primary btn-sm btn-link">Source&nbsp;<i class="bi bi-box-arrow-up-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Property Tax Revision: Phase 2</h5>
+                <p class="card-text">1st January 2024</p>
+                <div id="countdown3" class="alert alert-light countdown"></div>
+                <a href="https://www.mof.gov.sg/news-publications/press-releases/property-tax-rebate-for-all-owner-occupied-residential-properties-in-2024"
+                    class="btn btn-primary btn-sm btn-link">Source&nbsp;<i class="bi bi-box-arrow-up-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+</div>
+<br/><br/>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Water Price Revision: Phase 1</h5>
+                    <p class="card-text">1st April 2024</p>
+                    <div id="countdown4" class="alert alert-light countdown"></div>
+                    <a href="https://www.pub.gov.sg/Resources/News-Room/PressReleases/2023/09/Water-price-to-rise-from-April-2024-Government-to-provide-support"
+                        class="btn btn-primary btn-sm btn-link">Source&nbsp;<i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Town Council Price Revision: Phase 2</h5>
+                    <p class="card-text">1st July 2024</p>
+                    <div id="countdown5" class="alert alert-light countdown"></div>
+                    <a href="https://www.channelnewsasia.com/singapore/pap-town-councils-raise-service-and-conservancy-charges-july-3529041"
+                        target="_blank" noreferrer class="btn btn-primary btn-sm btn-link">Source&nbsp;<i
+                            class="bi bi-box-arrow-up-right"></i></a>
+                    <a href="https://www.straitstimes.com/singapore/ahtc-to-raise-service-and-conservancy-charges-from-oct-1"
+                        target="_blank" noreferrer class="btn btn-primary btn-sm btn-link">Source&nbsp;<i
+                            class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Water Price Revision: Phase 2</h5>
+                    <p class="card-text">1st April 2025</p>
+                    <div id="countdown6" class="alert alert-light countdown"></div>
+                    <a href="https://www.pub.gov.sg/Resources/News-Room/PressReleases/2023/09/Water-price-to-rise-from-April-2024-Government-to-provide-support"
+                        class="btn btn-primary btn-sm btn-link">Source&nbsp;<i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Set the target dates and times for the countdowns
+  const targetDates = [
+    new Date('December 23, 2023 00:00:00').getTime(),
+    new Date('January 1, 2024 00:00:00').getTime(),
+    new Date('January 1, 2024 00:00:00').getTime(),
+    new Date('April 1, 2024 00:00:00').getTime(),
+    new Date('July 1, 2024 00:00:00').getTime(),
+    new Date('April 1, 2025 00:00:00').getTime()
+  ];
+
+  // Update the countdowns every second
+  targetDates.forEach((targetDate, index) => {
+    setInterval(() => updateCountdown(targetDate, `countdown${index + 1}`), 1000);
+  });
+
+  function updateCountdown(targetDate, elementId) {
+        const currentDate = new Date().getTime();
+        const timeDifference = targetDate - currentDate;
+
+        if (timeDifference <= 0) {
+            document.getElementById(elementId).innerHTML = '<strong>Countdown expired!</strong>';
+        } else {
+            const years = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365.25));
+            const months = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            let countdownString = '';
+            if (years > 0) {
+                countdownString += `<strong>${years}</strong> year${years > 1 ? 's' : ''} `;
+            }
+            if (months > 0) {
+                countdownString += `<strong>${months}</strong> month${months > 1 ? 's' : ''} `;
+            }
+            if (days > 0) {
+                countdownString += `<strong>${days}</strong> day${days !== 1 ? 's' : ''} `;
+            }
+            if (hours >0) {
+                countdownString += `<strong>${hours}</strong> hour${hours !== 1 ? 's' : ''} `;
+            }
+            if (minutes > 0) {
+                countdownString += `<strong>${minutes}</strong> minute${minutes !== 1 ? 's' : ''} `;
+            }
+            if (seconds > 0) {
+                countdownString += `<strong>${seconds}</strong> second${seconds !== 1 ? 's' : ''}`;
+            }
+
+            document.getElementById(elementId).innerHTML = countdownString.trim();
+        }
+    }
+</script>
+
+</body>
+</html>
