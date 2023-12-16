@@ -7,7 +7,7 @@ I created it because I find it hard to keep track of all the price hikes that ar
 I do <b>NOT</b> intend to add too much features to it, but I will try to keep it updated as much as possible.<br>
 
 ## URL
-https://pricehikesg.leonardwong.tech/
+<a href="https://pricehikesg.leonardwong.tech/" target="_blank">Website</a>
 
 ## Socials
 • <a href="https://ig.leonardwong.tech" target="_blank">Instagram</a><br/>
